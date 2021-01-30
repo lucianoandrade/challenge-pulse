@@ -1,15 +1,19 @@
 import React from "react";
 import Header from '../Header';
 import Footer from '../Footer';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../../styles/theme';
 import GlobalStyles from '../../../styles/global';
 
 const PageContainer = props => {
   return (
     <>
-      <GlobalStyles />
-      <Header/>
-        {props.children}
-      <Footer/>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header/>
+          {props.children}
+        <Footer/>
+      </ThemeProvider>
     </>
   )
 }

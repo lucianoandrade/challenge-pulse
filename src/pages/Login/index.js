@@ -5,7 +5,6 @@ import PageContainer from "../../components/features/PageContainer/PageContainer
 function Login() {
   return (
     <PageContainer>
-      <section className="tela-de-login">
         <div className="login">
           <h2 className="titulo-page">Acesse sua conta</h2>
           <form className="acesso">
@@ -42,7 +41,6 @@ function Login() {
             <Link to="#">Ainda não tenho conta</Link>
           </div>
         </div>
-      </section>
     </PageContainer>
   );
 };

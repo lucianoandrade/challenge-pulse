@@ -1,10 +1,10 @@
 import React from "react";
-import {Footer} from "./styles.js";
+import {Footer, Logo} from "./styles.js";
 
 const FooterComponent = () => {
   return (
     <Footer>
-      Aqui vai ficar o Footer
+      <Logo />
     </Footer>
   );
 };

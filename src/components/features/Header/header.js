@@ -1,10 +1,10 @@
 import React from "react";
-import {Header} from "./styles.js";
+import { Header, Logo } from "./styles.js";
 
 const HeaderComponent = () => {
   return (
     <Header>
-      Aqui vai ficar o Header
+      <Logo />
     </Header>
   );
 };
