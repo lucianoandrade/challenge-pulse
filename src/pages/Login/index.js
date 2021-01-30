@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PageContainer from "../../components/features/PageContainer/PageContainer";
 
 function Login() {
   return (
-    <div>
+    <PageContainer>
       <section className="tela-de-login">
         <div className="login">
           <h2 className="titulo-page">Acesse sua conta</h2>
@@ -42,7 +43,7 @@ function Login() {
           </div>
         </div>
       </section>
-    </div>
+    </PageContainer>
   );
 };
 
