@@ -1,7 +1,6 @@
 import React from "react";
-// import Loading from "../../elements/Loading/Loading";
 import Header from '../Header';
-// import Footer from '../../features/Footer/Footer';
+import Footer from '../Footer';
 import GlobalStyles from '../../../styles/global';
 
 const PageContainer = props => {
@@ -10,9 +9,8 @@ const PageContainer = props => {
       <GlobalStyles />
       <Header/>
         {props.children}
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }
-
 export default PageContainer;
