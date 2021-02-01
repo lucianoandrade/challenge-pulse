@@ -32,10 +32,16 @@ function Login() {
           <Button>Entrar</Button>
         </Form>
         <Links>
-          <Link to="#">Esqueci minha senha</Link>
-        </Links>
-        <Links>
-          <Link to="#">Ainda não tenho conta</Link>
+          <Link to="#">
+            <Button color="alternative" >
+              Esqueci minha senha
+            </Button>
+          </Link>
+          <Link to="/cadastro">
+            <Button color="alternative" >
+              criar conta
+            </Button>
+          </Link>
         </Links>
       </Container>
     </PageContainer>

@@ -22,13 +22,3 @@ export const Form = styled.form`
     justify-content: center;
     padding: 15px;
 `;
-
-export const Links = styled.div`
-    width: 100%;
-    min-width: 300px;
-    max-width: 425px;
-    margin-top: 10px;
-    padding: 15px;
-    display: flex;
-    justify-content: space-around;
-`;

@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Header, Logo } from "./styles.js";
 
 const HeaderComponent = () => {
   return (
     <Header>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
     </Header>
   );
 };
