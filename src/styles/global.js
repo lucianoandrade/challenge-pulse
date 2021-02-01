@@ -28,15 +28,11 @@ export default createGlobalStyle`
     margin: 0;
     font-family: Rubik;
   }
-/* 
-  p {
-    font-size: 1.2em;
-  } */
 
   body {
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    background-color: #ededed;
+    background-color: #E5E5E5;
   }
 
   a {

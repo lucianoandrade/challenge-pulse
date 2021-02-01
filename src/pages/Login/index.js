@@ -5,12 +5,14 @@ import PageContainer from "../../components/features/PageContainer/PageContainer
 import Input from "../../components/elements/Input";
 import Button from "../../components/elements/Button";
 
+import { Container, Title, Form, Links } from "./styles";
+
 function Login() {
   return (
     <PageContainer>
-      <div className="login">
-        <h2 className="titulo-page">Acesse sua conta</h2>
-        <form className="acesso">
+      <Container>
+        <Title>Acesse sua conta</Title>
+        <Form>
           <Input 
             id="email"
             type="email"
@@ -28,14 +30,14 @@ function Login() {
               required={true}
           />
           <Button>Entrar</Button>
-        </form>
-        <div className="esqueci-senha">
+        </Form>
+        <Links>
           <Link to="#">Esqueci minha senha</Link>
-        </div>
-        <div className="sem-conta">
+        </Links>
+        <Links>
           <Link to="#">Ainda não tenho conta</Link>
-        </div>
-      </div>
+        </Links>
+      </Container>
     </PageContainer>
   );
 };

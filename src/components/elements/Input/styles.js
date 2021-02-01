@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Field = styled.fieldset`
     display: flex;
     flex-direction: column;
+    padding: 15px 0;
+    border: none;
 `;
 export const Label = styled.label`
     position: absolute;
