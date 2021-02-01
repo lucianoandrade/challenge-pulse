@@ -8,15 +8,23 @@ export const Field = styled.fieldset`
 `;
 export const Label = styled.label`
     position: absolute;
-    color: #888;
+    color: ${props => props.theme.palette.label};
     font-size: 12px;
     font-style: normal;  
     font-weight: 600;
     margin-top: -15px;
 `;
 export const Input = styled.input`
-    border: none;
-    border-bottom: 1px solid #979797;
+    border: ${props => props.error ? `1px solid ${props.theme.palette.red}` :'none'}};
+    border-bottom: ${props => props.error ? `1px solid ${props.theme.palette.red}` : 
+        `1px solid ${props.theme.palette.borderInput}`}};
     padding: 15px 0;
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.palette.white};
+`;
+
+export const ErrorMessage = styled.p`
+    color: ${props => props.theme.palette.red};
+    margin-top: 5px;
+    padding: 0;
+    font-size: 12px;
 `;

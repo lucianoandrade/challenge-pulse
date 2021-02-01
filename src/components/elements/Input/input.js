@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, Label, Input } from "./styles";
+import { Field, Label, Input, ErrorMessage } from "./styles";
 
 const InputComponet = props => {
   const {
@@ -12,6 +12,8 @@ const InputComponet = props => {
     required = false,
     onChange,
     value,
+    error,
+    errorMessage
   } = props;
 
   return (
@@ -26,8 +28,10 @@ const InputComponet = props => {
           disabled={disabled}
           required={required}
           onChange={onChange}
-          value={value} 
+          value={value}
+          error={error} 
         />
+        {error ? <ErrorMessage>{errorMessage}</ErrorMessage> : ""}
       </Field>
     </>
   );

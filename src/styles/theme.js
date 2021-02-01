@@ -7,7 +7,9 @@ const theme = {
     gray:'#A2A2A2',
     lightBlack: '#4b4b4b',
     lightGray:'#F0EFEF',
-    white:'#fff'
+    white:'#fff',
+    label: '#888',
+    borderInput: '#979797'
   },
 };
 export default theme;
