@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Header, Logo } from "./styles.js";
+import { Link, useHistory  } from "react-router-dom";
+import { Header, Logo, Logout } from "./styles.js";
 
 const HeaderComponent = () => {
+  const history = useHistory();
   return (
     <Header>
-      <Link to="/">
-        <Logo />
-      </Link>
+      <Logo />
+      {history.location.pathname === "/" ? <Logout onClick={() => history.push("/login")} /> : ""}
     </Header>
   );
 };

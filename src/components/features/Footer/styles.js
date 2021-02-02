@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import LogoMateus from '../../../assets/images/logo-mateus-branca.png';
+import LogoMateus from '../../../assets/images/challengeLogo.png';
 
 export const Footer = styled.footer`
     width: 100%;
@@ -7,7 +7,7 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     font-family: 'Open Sans', sans-serif;
     padding: 15px 0;
     bottom: 0;
@@ -15,7 +15,7 @@ export const Footer = styled.footer`
 
 export const Logo = styled.img.attrs(() => ({
     src: LogoMateus,
-    alt: "Logotipo do Grupo Mateus"
+    alt: "Logotipo do Desafio Pulse"
   }))`
   max-width: 204px;
   width: 100%;
