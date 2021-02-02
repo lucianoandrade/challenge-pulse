@@ -20,10 +20,24 @@ export const Logo = styled.img.attrs(() => ({
   height: auto;
 `;
 
+export const LogoutContainer = styled.div`
+  color: ${({ theme }) => theme.palette.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  cursor: pointer;
+`;
+
 export const Logout = styled(RiLogoutCircleRLine)`
   height: 30px;
   width: 30px;
   color: ${({ theme }) => theme.palette.white};
-  margin: 30px;
+  margin: 30px 5px;
+  cursor: pointer;
+`;
+
+export const LogoutSpan = styled.span`
+  color: ${({ theme }) => theme.palette.white};
   cursor: pointer;
 `;
