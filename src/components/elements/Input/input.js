@@ -14,13 +14,15 @@ const InputComponet = props => {
     value,
     error,
     errorMessage,
-    defaultValue
+    defaultValue,
+    accept,
+    style
   } = props;
 
   return (
     <>
       <Field>
-        <Label htmlFor={id}>{label}</Label>
+        <Label htmlFor={id} accept={accept}>{label}</Label>
         <Input
           id={id}
           type={type}
@@ -31,7 +33,8 @@ const InputComponet = props => {
           onChange={onChange}
           defaultValue={defaultValue}
           value={value}
-          error={error} 
+          error={error}
+          style={style} 
         />
         {error ? <ErrorMessage>{errorMessage}</ErrorMessage> : ""}
       </Field>

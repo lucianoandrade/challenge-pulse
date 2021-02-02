@@ -22,8 +22,8 @@ export const Title = styled.h2`
 `;
 
 export const AvatarIcon = styled(Avatar)`
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 `;
 
 export const Logo = styled(LogoM)`

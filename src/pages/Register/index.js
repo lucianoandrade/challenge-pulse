@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import PageContainer from "../../components/features/PageContainer/PageContainer";
 import Input from "../../components/elements/Input";
 import Button from "../../components/elements/Button";
-import { Container, Title, Form } from "./styles";
+import { Container, Title, Form, AvatarIcon } from "./styles";
 
 const Register = () => {
 
@@ -13,6 +13,9 @@ const Register = () => {
   const [confirmSenha, setConfirmSenha] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [thumbnailFile, setThumbnailFile] = useState("");
+  const [preview, setPreview] = useState("");
+  const userActive = JSON.parse(localStorage.getItem('userActive')) || [];
   const allUsers = JSON.parse(localStorage.getItem('users')) || [];
   const history = useHistory();
 
@@ -29,10 +32,19 @@ const Register = () => {
       setSenha("");
       setConfirmSenha("");
     } else {
-      allUsers.push({name, email, senha});
+      const imagethumb = preview !== '' ? preview : ''
+      allUsers.push({name, email, senha, image: imagethumb});
       localStorage.setItem('users', JSON.stringify(allUsers));
-      history.push("/login");
+      userActive.length !== 0 ? history.push("/") : history.push("/login")
     }
+  }
+
+  useEffect(() => {
+    setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
+  }, [thumbnailFile])
+
+  const onChangeFile = async (e) => {
+    setThumbnailFile(e.target.files[0])   
   }
   
   return (
@@ -40,6 +52,17 @@ const Register = () => {
       <Container>
         <Title>Criar usuário</Title>
         <Form onSubmit={handleSubmit}>
+          <Input 
+            id='input-image'
+            type="file"
+            name='input-image'
+            accept="image/*"
+            onChange={onChangeFile}
+            style={{visibility: "hidden", position: "fixed", left: "-9000px"}}
+            label={thumbnailFile ? <img src={`${preview}`} style={{
+                width: '70px', height: '70px', borderRadius: '50%'}} 
+                alt="preview da sua imagem"/> : <AvatarIcon />}
+          />
           <Input 
             id="nome"
             type="text"

@@ -7,12 +7,11 @@ export const Field = styled.fieldset`
     border: none;
 `;
 export const Label = styled.label`
-    position: absolute;
     color: ${props => props.theme.palette.label};
     font-size: 12px;
     font-style: normal;  
     font-weight: 600;
-    margin-top: -15px;
+    margin: ${props => props.accept ? '0 auto' : '-15px 0 0 0'};
 `;
 export const Input = styled.input`
     border: ${props => props.error ? `1px solid ${props.theme.palette.red}` :'none'}};

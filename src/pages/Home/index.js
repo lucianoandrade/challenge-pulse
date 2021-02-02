@@ -20,7 +20,7 @@ function Home() {
   const users = JSON.parse(localStorage.getItem('users')) || [];
   const usersActive = JSON.parse(localStorage.getItem('userActive')) || [];
 
-  if(usersActive.length === 0) {
+  if(usersActive.length === 0 || users.length === 0) {
     return (
     <Redirect to="/login" />
     )
@@ -46,7 +46,10 @@ function Home() {
               <>
                 <Card key={index}>
                   <Icons>
-                    <AvatarIcon />
+                  {!item.image.type ? <img src={`${item.image}`} style={{
+                    width: '50px', height: '50px', borderRadius: '50%'}} 
+                    alt="Imagem de perfil" /> : <AvatarIcon />
+                  }
                     <div>
                       <EditIcon onClick={() => history.push("/editar-cadastro", {userItem: item, userIndex: index})}/>
                       <DeleteIcon onClick={() => deleteUser(item)}/>
