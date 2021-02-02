@@ -41,18 +41,12 @@ function Home() {
         <Button onClick={() => history.push("/cadastro")}>
           Adicionar mais usuários
         </Button>
-        <Button onClick={() => {
-            localStorage.clear();
-            window.document.location.reload()
-          }}>
-          Deslogar e Resetar aplicação 
-        </Button>
           {users.map((item, index) => {
             return (
               <>
                 <Card key={index}>
                   <Icons>
-                  {!item.image.type ? <img src={`${item.image}`} style={{
+                  {item.imageProfile !== null ? <img src={`${item.imageProfile}`} style={{
                     width: '50px', height: '50px', borderRadius: '50%'}} 
                     alt="Imagem de perfil" /> : <AvatarIcon />
                   }

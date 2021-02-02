@@ -29,6 +29,15 @@ export const LogoutContainer = styled.div`
   cursor: pointer;
 `;
 
+export const LogoutContainerReset = styled.div`
+  color: ${({ theme }) => theme.palette.red};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  cursor: pointer;
+`;
+
 export const Logout = styled(RiLogoutCircleRLine)`
   height: 30px;
   width: 30px;
@@ -39,5 +48,18 @@ export const Logout = styled(RiLogoutCircleRLine)`
 
 export const LogoutSpan = styled.span`
   color: ${({ theme }) => theme.palette.white};
+  cursor: pointer;
+`;
+
+export const Reset = styled(RiLogoutCircleRLine)`
+  height: 30px;
+  width: 30px;
+  color: ${({ theme }) => theme.palette.lightBlack};
+  margin: 30px 5px;
+  cursor: pointer;
+`;
+
+export const ResetSpan = styled.span`
+  color: ${({ theme }) => theme.palette.lightBlack};
   cursor: pointer;
 `;

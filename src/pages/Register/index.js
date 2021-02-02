@@ -7,6 +7,7 @@ import { Container, Title, Form, AvatarIcon } from "./styles";
 
 const Register = () => {
 
+  const [image, setImage] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -32,8 +33,8 @@ const Register = () => {
       setSenha("");
       setConfirmSenha("");
     } else {
-      const imagethumb = preview !== '' ? preview : ''
-      allUsers.push({name, email, senha, image: imagethumb});
+      const imageProfile = image || null;
+      allUsers.push({name, email, senha, imageProfile});
       localStorage.setItem('users', JSON.stringify(allUsers));
       userActive.length !== 0 ? history.push("/") : history.push("/login")
     }
@@ -43,9 +44,24 @@ const Register = () => {
     setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
   }, [thumbnailFile])
 
-  const onChangeFile = (e) => {
-    setThumbnailFile(e.target.files[0])   
+  const onChangeFile = async (e) => {
+    setThumbnailFile(e.target.files[0]);
+    if (e.target.files[0] !== "") {
+      const imgBase64 = await convertBase64(e.target.files[0])
+      setImage(imgBase64);
+    }     
   }
+
+  const convertBase64 = (image) => {
+    return new Promise((resolve, reject) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.onloadend = () => {
+            resolve(reader.result)
+        };
+    })
+  };
+
   
   return (
     <PageContainer>

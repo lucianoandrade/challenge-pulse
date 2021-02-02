@@ -5,7 +5,10 @@ import {
   Logo, 
   LogoutContainer, 
   Logout, 
-  LogoutSpan 
+  LogoutSpan,
+  LogoutContainerReset,
+  Reset,
+  ResetSpan 
 } from "./styles";
 
 const HeaderComponent = () => {
@@ -27,6 +30,14 @@ const HeaderComponent = () => {
             <LogoutSpan>Sair</LogoutSpan>
             <Logout />
           </LogoutContainer>
+
+          <LogoutContainerReset onClick={() => {
+            localStorage.clear();
+            window.document.location.reload()
+          }}>         
+            <ResetSpan>Reset</ResetSpan>
+            <Reset />
+          </LogoutContainerReset>
         </> 
         : ""}
     </Header>

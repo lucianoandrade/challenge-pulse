@@ -11,33 +11,49 @@ import {
 } from "./styles";
 
 function EditRegistration(props) {
-  const history = useHistory();
-  const [thumbnailFile, setThumbnailFile] = useState("");
-  const [preview, setPreview] = useState("");
+  
   const userItem = props?.location?.state?.userItem || null;
   const userIndex = props?.location?.state?.userIndex || null;
+  const [image, setImage] = useState(null);
+  const [thumbnailFile, setThumbnailFile] = useState("");
+  const [preview, setPreview] = useState(userItem.imageProfile || "");
   const [name, setName] = useState(userItem?.name || '');
   const [email, setEmail] = useState(userItem?.email|| '');
+  const history = useHistory();
   const usersActive = JSON.parse(localStorage.getItem('userActive')) || [];
   const users = JSON.parse(localStorage.getItem('users')) || [];
 
-  if(usersActive.length === 0) return <Redirect to="/login" />;
-
   const registrationChange = () => {
     users.splice(userIndex, 1);
-    users.push({name, email, senha: userItem.senha})
+    const imageProfile = image || null;
+    users.push({name, email, senha: userItem.senha, imageProfile})
     localStorage.setItem('users', JSON.stringify(users));
     history.push("/")
   }
 
+  const onChangeFile = async (e) => {
+    setThumbnailFile(e.target.files[0]);
+    if (e.target.files[0] !== "") {
+      const imgBase64 = await convertBase64(e.target.files[0])
+      setImage(imgBase64);
+    }     
+  }
+
+  const convertBase64 = (image) => {
+    return new Promise((resolve, reject) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.onloadend = () => {
+            resolve(reader.result)
+        };
+    })
+  };
+
   useEffect(() => {
     setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
   }, [thumbnailFile])
-
-  const onChangeFile = () => {
-    setThumbnailFile(e.target.files[0])   
-  }
-
+  
+  if(usersActive.length === 0) return <Redirect to="/login" />;
   return (
     <PageContainer>
       <Container>
@@ -50,7 +66,7 @@ function EditRegistration(props) {
             accept="image/*"
             onChange={onChangeFile}
             style={{visibility: "hidden", position: "fixed", left: "-9000px"}}
-            label={thumbnailFile ? <img src={`${preview}`} style={{
+            label={preview ? <img src={`${preview}`} style={{
                 width: '70px', height: '70px', borderRadius: '50%'}} 
                 alt="preview da sua imagem"/> : <AvatarIcon />}
           />

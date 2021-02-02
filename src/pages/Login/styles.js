@@ -5,7 +5,7 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 50px 0 115px;
+    margin: 50px 0 125px;
 
     @media screen and (min-height: 730px){
         height: 100vh;
@@ -30,8 +30,7 @@ export const Links = styled.div`
     width: 100%;
     min-width: 300px;
     max-width: 425px;
-    margin-top: 10px;
-    padding: 15px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-around;
 `;

@@ -77,11 +77,6 @@ function Login() {
           <Button>Entrar</Button>
         </Form>
         <Links>
-          <Link to="#">
-            <Button color="alternative" >
-              Esqueci minha senha
-            </Button>
-          </Link>
           <Link to="/cadastro">
             <Button color="alternative" >
               criar conta
