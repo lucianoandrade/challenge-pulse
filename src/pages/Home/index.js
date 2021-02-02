@@ -1,10 +1,10 @@
 import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PageContainer from "../../components/features/PageContainer/PageContainer";
+import Card from "../../components/elements/Card";
 import { 
   Container, 
   Title, 
-  Card, 
   Icons, 
   AvatarIcon, 
   DeleteIcon, 

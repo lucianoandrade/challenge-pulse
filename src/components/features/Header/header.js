@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory  } from "react-router-dom";
-import { Header, Logo, Logout } from "./styles.js";
+import { Header, Logo, Logout } from "./styles";
 
 const HeaderComponent = () => {
   const history = useHistory();

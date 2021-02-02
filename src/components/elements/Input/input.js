@@ -3,17 +3,18 @@ import { Field, Label, Input, ErrorMessage } from "./styles";
 
 const InputComponet = props => {
   const {
-    id = "id",
+    id,
     type = "text",
-    name = "name",
-    placeholder = "placeholder",
-    label = "label",
+    name,
+    placeholder,
+    label,
     disabled = false,
     required = false,
     onChange,
     value,
     error,
-    errorMessage
+    errorMessage,
+    defaultValue
   } = props;
 
   return (
@@ -28,6 +29,7 @@ const InputComponet = props => {
           disabled={disabled}
           required={required}
           onChange={onChange}
+          defaultValue={defaultValue}
           value={value}
           error={error} 
         />

@@ -21,21 +21,6 @@ export const Title = styled.h2`
     margin-bottom: 20px;
 `;
 
-export const Card = styled.div`
-    width: 95%;
-    min-width: 300px;
-    max-width: 425px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: ${({ theme }) => theme.palette.white};
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
-    margin-bottom: 15px;
-    cursor: pointer;
-`;
-
 export const AvatarIcon = styled(Avatar)`
     width: 40px;
     height: 40px;
@@ -53,7 +38,7 @@ export const Icons = styled.div`
 `;
 
 export const Content = styled.p`
-    
+    margin: 2px 0;
 `;
 
 export const DeleteIcon = styled(RiDeleteBin6Line)`
