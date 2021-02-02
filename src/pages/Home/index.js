@@ -15,12 +15,20 @@ import {
 
 function Home() {
   const history = useHistory();
+  
   const users = JSON.parse(localStorage.getItem('users'));
-   if(!users) {
-     return (
-      <Redirect to="/login" />
-     )
-   }
+  if(!users) {
+    return (
+    <Redirect to="/login" />
+    )
+  }
+
+  const deleteUser = (e) => {
+    const index =  users.indexOf(e);
+    users.splice(index, 1);
+    localStorage.setItem('users', JSON.stringify(users));
+    window.document.location.reload();
+  }
 
   return (
     <PageContainer>
@@ -30,14 +38,12 @@ function Home() {
           {users.map((item, index) => {
             return (
               <>
-                <Card key={index} 
-                  onClick={() => history.push("/editar-cadastro", {user: item})}
-                >
+                <Card key={index}>
                   <Icons>
                     <AvatarIcon />
                     <div>
                       <EditIcon onClick={() => history.push("/editar-cadastro", {user: item})}/>
-                      <DeleteIcon />
+                      <DeleteIcon onClick={() => deleteUser(item)}/>
                     </div>
                   </Icons>
                   <Content>{`Nome: ${item.name}`}</Content>

@@ -11,6 +11,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [error, setError] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const userActive = JSON.parse(localStorage.getItem('userActive')) || [];
   const allUsers = JSON.parse(localStorage.getItem('users')) || [];
@@ -22,6 +23,12 @@ function Login() {
       setError(true);
       setErrorMessage("Mínimo 6 caracteres");
       setSenha("");
+    } else if (allUsers.length === 0) {
+      setErrorMessage("Ainda não existe cadastros, seja o primeiro");
+      setError(true);
+      setErrorEmail(true);
+      setEmail("");
+      setSenha("");
     } else {
       // eslint-disable-next-line
       allUsers.map(e => {
@@ -31,6 +38,7 @@ function Login() {
           history.push("/");
         } else {
           setError(true);
+          setErrorEmail(true);
           setErrorMessage("E-mail ou senha incorreto");
         }
       });
@@ -50,6 +58,8 @@ function Login() {
             label="E-mail"
             required={true}
             value={email}
+            error={errorEmail ? true : false}
+            errorMessage={errorEmail ? errorMessage : ''}
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input 

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Redirect } from "react-router-dom"; 
 import PageContainer from "../../components/features/PageContainer/PageContainer";
 import Card from "../../components/elements/Card";
 import Input from "../../components/elements/Input";
@@ -9,9 +10,11 @@ import {
 } from "./styles";
 
 function EditRegistration(props) {
-  const user = props.location.state.user;
-  const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
+  const user = props?.location?.state?.user || null;
+  const [name, setName] = useState(user?.name || '');
+  const [email, setEmail] = useState(user?.email|| '');
+
+  if(!user) return <Redirect to="/login" />;
 
   return (
     <PageContainer>
