@@ -8,9 +8,12 @@ export const Container = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    margin-top: 50px;
+    margin: 50px 0 105px;
+
+    @media screen and (min-height: 730px){
+        height: 100vh;
+    }
 `;
 
 export const Title = styled.h2`

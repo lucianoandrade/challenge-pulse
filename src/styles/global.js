@@ -30,7 +30,7 @@ export default createGlobalStyle`
   }
 
   body {
-    overflow: hidden;
+    overflow: auto;
     -webkit-font-smoothing: antialiased;
     background-color: #E5E5E5;
   }

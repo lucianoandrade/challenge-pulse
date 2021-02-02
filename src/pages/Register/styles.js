@@ -4,9 +4,12 @@ export const Container = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: 50px 0;
+    margin: 50px 0 70px;
+
+    @media screen and (min-height: 730px){
+        height: 100vh;
+    }
 `;
 
 export const Title = styled.h2`
