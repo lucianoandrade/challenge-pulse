@@ -43,7 +43,7 @@ const Register = () => {
     setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
   }, [thumbnailFile])
 
-  const onChangeFile = async (e) => {
+  const onChangeFile = (e) => {
     setThumbnailFile(e.target.files[0])   
   }
   

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Redirect, useHistory } from "react-router-dom"; 
 import PageContainer from "../../components/features/PageContainer/PageContainer";
 import Card from "../../components/elements/Card";
@@ -6,11 +6,14 @@ import Input from "../../components/elements/Input";
 import Button from "../../components/elements/Button";
 import { 
   Container, 
-  Title
+  Title,
+  AvatarIcon
 } from "./styles";
 
 function EditRegistration(props) {
   const history = useHistory();
+  const [thumbnailFile, setThumbnailFile] = useState("");
+  const [preview, setPreview] = useState("");
   const userItem = props?.location?.state?.userItem || null;
   const userIndex = props?.location?.state?.userIndex || null;
   const [name, setName] = useState(userItem?.name || '');
@@ -27,12 +30,30 @@ function EditRegistration(props) {
     history.push("/")
   }
 
+  useEffect(() => {
+    setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
+  }, [thumbnailFile])
+
+  const onChangeFile = () => {
+    setThumbnailFile(e.target.files[0])   
+  }
 
   return (
     <PageContainer>
       <Container>
         <Title>Editar cadastro</Title>
         <Card>
+          <Input 
+            id='input-image'
+            type="file"
+            name='input-image'
+            accept="image/*"
+            onChange={onChangeFile}
+            style={{visibility: "hidden", position: "fixed", left: "-9000px"}}
+            label={thumbnailFile ? <img src={`${preview}`} style={{
+                width: '70px', height: '70px', borderRadius: '50%'}} 
+                alt="preview da sua imagem"/> : <AvatarIcon />}
+          />
           <Input 
             id="nome"
             type="text"

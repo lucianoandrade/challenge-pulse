@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { 
   Header, 
   Logo, 
@@ -18,7 +18,9 @@ const HeaderComponent = () => {
 
   return (
     <Header>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       {history.location.pathname === "/" ?
         <>
           <LogoutContainer onClick={() => logoutFunction()}>         
