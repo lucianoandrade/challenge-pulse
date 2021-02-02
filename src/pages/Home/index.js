@@ -41,6 +41,12 @@ function Home() {
         <Button onClick={() => history.push("/cadastro")}>
           Adicionar mais usuários
         </Button>
+        <Button onClick={() => {
+            localStorage.clear();
+            window.document.location.reload()
+          }}>
+          Deslogar e Resetar aplicação 
+        </Button>
           {users.map((item, index) => {
             return (
               <>
