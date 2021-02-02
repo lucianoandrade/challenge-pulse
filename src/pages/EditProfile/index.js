@@ -13,8 +13,9 @@ function EditRegistration(props) {
   const user = props?.location?.state?.user || null;
   const [name, setName] = useState(user?.name || '');
   const [email, setEmail] = useState(user?.email|| '');
+  const usersActive = JSON.parse(localStorage.getItem('userActive'));
 
-  if(!user) return <Redirect to="/login" />;
+  if(usersActive.length === 0) return <Redirect to="/login" />;
 
   return (
     <PageContainer>

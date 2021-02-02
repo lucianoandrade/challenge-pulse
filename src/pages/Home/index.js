@@ -17,7 +17,9 @@ function Home() {
   const history = useHistory();
   
   const users = JSON.parse(localStorage.getItem('users'));
-  if(!users) {
+  const usersActive = JSON.parse(localStorage.getItem('userActive'));
+
+  if(usersActive.length === 0) {
     return (
     <Redirect to="/login" />
     )
