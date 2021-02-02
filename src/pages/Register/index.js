@@ -38,13 +38,13 @@ const Register = () => {
   return (
     <PageContainer>
       <Container>
-        <Title>Crie sua conta</Title>
+        <Title>Criar usuário</Title>
         <Form onSubmit={handleSubmit}>
           <Input 
             id="nome"
             type="text"
             name="nome"
-            placeholder="Seu nome aqui"
+            placeholder="Nome aqui"
             label="Nome"
             required={true}
             value={name}
@@ -64,7 +64,7 @@ const Register = () => {
             id="senha"
             type="password"
             name="senha"
-            placeholder="Sua Senha"
+            placeholder="Senha"
             label="Senha"
             required={true}
             value={senha}
@@ -76,8 +76,8 @@ const Register = () => {
             id="confirmSenha"
             type="password"
             name="confirmSenha"
-            placeholder="Confirme sua senha"
-            label="Confirme sua senha"
+            placeholder="Confirme a senha"
+            label="Confirme a senha"
             required={true}
             value={confirmSenha}
             onChange={(e) => setConfirmSenha(e.target.value)}

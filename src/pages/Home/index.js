@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import PageContainer from "../../components/features/PageContainer/PageContainer";
 import Card from "../../components/elements/Card";
+import Button from "../../components/elements/Button";
 import { 
   Container, 
   Title, 
@@ -37,6 +38,9 @@ function Home() {
       <Container>
         <Logo />
         <Title>Pessoas cadastradas</Title>
+        <Button onClick={() => history.push("/cadastro")}>
+          Adicionar mais usuários
+        </Button>
           {users.map((item, index) => {
             return (
               <>

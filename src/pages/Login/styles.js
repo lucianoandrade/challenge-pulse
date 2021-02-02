@@ -5,7 +5,7 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 50px 0 135px;
+    margin: 50px 0 115px;
 
     @media screen and (min-height: 730px){
         height: 100vh;

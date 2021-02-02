@@ -17,6 +17,7 @@ export const Button = styled.button`
     padding: 0 15px;
     transition: all linear .1s;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
     
     &:hover {
         color: ${props => props.color === "alternative" ? 
