@@ -33,6 +33,7 @@ export const Card = styled.div`
     background-color: ${({ theme }) => theme.palette.white};
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
     margin-bottom: 15px;
+    cursor: pointer;
 `;
 
 export const AvatarIcon = styled(Avatar)`
@@ -58,10 +59,12 @@ export const Content = styled.p`
 export const DeleteIcon = styled(RiDeleteBin6Line)`
     width: 20px;
     height: 20px;
+    cursor: pointer;
 `;
 
 export const EditIcon = styled(RiEdit2Fill)`
     width: 20px;
     height: 20px;
+    cursor: pointer;
     margin-right: 4px;
 `;

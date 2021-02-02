@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import PageContainer from "../../components/features/PageContainer/PageContainer";
 import { 
   Container, 
@@ -14,7 +14,7 @@ import {
 } from "./styles";
 
 function Home() {
-
+  const history = useHistory();
   const users = JSON.parse(localStorage.getItem('users'));
    if(!users) {
      return (
@@ -30,11 +30,13 @@ function Home() {
           {users.map((item, index) => {
             return (
               <>
-                <Card key={index}>
+                <Card key={index} 
+                  onClick={() => history.push("/editar-cadastro", {user: item})}
+                >
                   <Icons>
                     <AvatarIcon />
                     <div>
-                      <EditIcon />
+                      <EditIcon onClick={() => history.push("/editar-cadastro", {user: item})}/>
                       <DeleteIcon />
                     </div>
                   </Icons>
