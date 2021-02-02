@@ -16,7 +16,7 @@ function EditRegistration(props) {
   const userIndex = props?.location?.state?.userIndex || null;
   const [image, setImage] = useState(null);
   const [thumbnailFile, setThumbnailFile] = useState("");
-  const [preview, setPreview] = useState(userItem.imageProfile || "");
+  const [preview, setPreview] = useState("");
   const [name, setName] = useState(userItem?.name || '');
   const [email, setEmail] = useState(userItem?.email|| '');
   const history = useHistory();
@@ -50,7 +50,14 @@ function EditRegistration(props) {
   };
 
   useEffect(() => {
-    setPreview(thumbnailFile ? URL.createObjectURL(thumbnailFile) : <AvatarIcon />);
+    if(userItem.imageProfile) {
+      setPreview(userItem.imageProfile)
+    } else if (thumbnailFile) {
+      setPreview(URL.createObjectURL(thumbnailFile))
+    } else {
+      <AvatarIcon />
+    }
+    // eslint-disable-next-line
   }, [thumbnailFile])
   
   if(usersActive.length === 0) return <Redirect to="/login" />;
