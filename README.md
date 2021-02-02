@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://github.com/lucianoandrade/challenge-pulse/blob/main/src/assets/images/challengeLogo.png" alt="Pulse Challenge" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">
+  ...
+</h3>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## Sobre o Desafio :green_book:
 
-### `yarn start`
+Este projeto é fruto de um desafio para a Pulse, empresa especializada em serviços e
+soluções tecnológicas para o mercado de varejo, atacado, eletro e indústria. O desafio consiste em criar um CRUD utilizando HTML, CSS, Javascript e React, além de outras tecnologias do ecosistema.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Como rodar o projeto ?
+Para funcionamento da aplicação é necessário clonar o projeto e em seguida instalar todas as dependências.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Se estiver utilizando Yarn
 
-### `yarn test`
+  basta excutar na raiz do Projeto
+  Para instalar as dependências:
+  yarn install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Para startar a aplicação :
+  yarn start
 
-### `yarn build`
+  Executa o aplicativo no modo de desenvolvimento.
+  Abra http: // localhost: 3000 para visualizá-lo no navegador.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Se estiver utilizando npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Todos os comandos abaixo devem ser excutados na raiz do Projeto
+  Para instalar as dependências:
+  npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Para startar a aplicação :
+  npm start
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Executa o aplicativo no modo de desenvolvimento.
+  Abra http: // localhost: 3000 para visualizá-lo no navegador.
